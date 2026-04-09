@@ -1,3 +1,7 @@
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+
 namespace BurgerKiosk
 {
     public partial class BurgerKiosk : Form
@@ -7,17 +11,10 @@ namespace BurgerKiosk
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            rdoNone.Checked = true;
-            this.ActiveControl = null;
-        }
-
-        private void btnOrder_Click(object sender, EventArgs e)
+        private void UpdateOrder()
         {
             int totalCost = 0;
             bool isSelected = false;
-            lblTitle.Focus();
 
             lstOrder.Items.Clear();
 
@@ -79,30 +76,40 @@ namespace BurgerKiosk
             lblTotal.ForeColor = Color.Blue;
         }
 
+        private void BurgerKiosk_Load(object sender, EventArgs e)
+        {
+            rdoNone.Checked = true;
+            this.ActiveControl = null;
+            lblTotal.Text = "총 금액 : 0원";
+            lblTotal.ForeColor = Color.Blue;
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            UpdateOrder();
+        }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-
-            rdoHam.Checked = false;
-            rdoBulgogi.Checked = false;
-            rdoChicken.Checked = false;
-
+            rdoNone.Checked = true;
 
             chkFries.Checked = false;
             chkCola.Checked = false;
             chkCheese.Checked = false;
             chkSauce.Checked = false;
 
-
             lstOrder.Items.Clear();
             lblTotal.Text = "총 금액 : 0원";
+            lblTotal.ForeColor = Color.Blue;
+        }
 
-            rdoHam.Focus();
+        private void SelectionChanged(object sender, EventArgs e)
+        {
+            UpdateOrder();
         }
 
         private void grpMenu_Enter(object sender, EventArgs e)
         {
-
         }
     }
 }
