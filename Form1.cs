@@ -1,21 +1,23 @@
 namespace BurgerKiosk
 {
-    public partial class Form1 : Form
+    public partial class BurgerKiosk : Form
     {
-        public Form1()
+        public BurgerKiosk()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            rdoNone.Checked = true;
+            this.ActiveControl = null;
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
             int totalCost = 0;
             bool isSelected = false;
+            lblTitle.Focus();
 
             lstOrder.Items.Clear();
 
@@ -94,6 +96,8 @@ namespace BurgerKiosk
 
             lstOrder.Items.Clear();
             lblTotal.Text = "총 금액 : 0원";
+
+            rdoHam.Focus();
         }
 
         private void grpMenu_Enter(object sender, EventArgs e)

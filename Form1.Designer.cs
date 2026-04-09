@@ -1,6 +1,6 @@
 ﻿namespace BurgerKiosk
 {
-    partial class Form1
+    partial class BurgerKiosk
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BurgerKiosk));
             lblTitle = new Label();
             rdoHam = new RadioButton();
             rdoBulgogi = new RadioButton();
@@ -47,6 +47,7 @@
             lstOrder = new ListBox();
             btnOrder = new Button();
             btnReset = new Button();
+            rdoNone = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)picHam).BeginInit();
             grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picChicken).BeginInit();
@@ -117,6 +118,7 @@
             // 
             // grpMenu
             // 
+            grpMenu.Controls.Add(rdoNone);
             grpMenu.Controls.Add(picChicken);
             grpMenu.Controls.Add(picBulgogi);
             grpMenu.Controls.Add(rdoHam);
@@ -128,7 +130,7 @@
             grpMenu.Location = new Point(28, 146);
             grpMenu.Name = "grpMenu";
             grpMenu.Size = new Size(441, 596);
-            grpMenu.TabIndex = 11;
+            grpMenu.TabIndex = 1;
             grpMenu.TabStop = false;
             grpMenu.Text = "메뉴선택";
             grpMenu.Enter += grpMenu_Enter;
@@ -165,7 +167,7 @@
             grpOption.Location = new Point(503, 159);
             grpOption.Name = "grpOption";
             grpOption.Size = new Size(293, 396);
-            grpOption.TabIndex = 12;
+            grpOption.TabIndex = 2;
             grpOption.TabStop = false;
             grpOption.Text = "추가옵션";
             // 
@@ -226,7 +228,7 @@
             grpOrder.Location = new Point(819, 159);
             grpOrder.Name = "grpOrder";
             grpOrder.Size = new Size(691, 401);
-            grpOrder.TabIndex = 13;
+            grpOrder.TabIndex = 5;
             grpOrder.TabStop = false;
             grpOrder.Text = "주문내역";
             // 
@@ -249,6 +251,7 @@
             lstOrder.Name = "lstOrder";
             lstOrder.Size = new Size(538, 229);
             lstOrder.TabIndex = 0;
+            lstOrder.TabStop = false;
             // 
             // btnOrder
             // 
@@ -258,7 +261,7 @@
             btnOrder.Location = new Point(897, 629);
             btnOrder.Name = "btnOrder";
             btnOrder.Size = new Size(220, 89);
-            btnOrder.TabIndex = 2;
+            btnOrder.TabIndex = 3;
             btnOrder.Text = "주문하기";
             btnOrder.UseVisualStyleBackColor = false;
             btnOrder.Click += btnOrder_Click;
@@ -271,12 +274,22 @@
             btnReset.Location = new Point(1160, 629);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(223, 89);
-            btnReset.TabIndex = 14;
+            btnReset.TabIndex = 4;
             btnReset.Text = "초기화";
             btnReset.UseVisualStyleBackColor = false;
             btnReset.Click += btnReset_Click;
             // 
-            // Form1
+            // rdoNone
+            // 
+            rdoNone.AutoSize = true;
+            rdoNone.Location = new Point(-182, 503);
+            rdoNone.Name = "rdoNone";
+            rdoNone.Size = new Size(27, 26);
+            rdoNone.TabIndex = 7;
+            rdoNone.TabStop = true;
+            rdoNone.UseVisualStyleBackColor = true;
+            // 
+            // BurgerKiosk
             // 
             AutoScaleDimensions = new SizeF(14F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -287,8 +300,8 @@
             Controls.Add(grpOrder);
             Controls.Add(grpMenu);
             Controls.Add(lblTitle);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "BurgerKiosk";
+            Text = "BurgerKiosk";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)picHam).EndInit();
             grpMenu.ResumeLayout(false);
@@ -323,5 +336,6 @@
         private Button btnReset;
         private PictureBox picChicken;
         private PictureBox picBulgogi;
+        private RadioButton rdoNone;
     }
 }
