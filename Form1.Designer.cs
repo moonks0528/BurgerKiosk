@@ -223,9 +223,9 @@
             grpOrder.Controls.Add(lstOrder);
             grpOrder.Font = new Font("맑은 고딕", 18F, FontStyle.Regular, GraphicsUnit.Point, 129);
             grpOrder.ForeColor = Color.DarkRed;
-            grpOrder.Location = new Point(871, 173);
+            grpOrder.Location = new Point(819, 159);
             grpOrder.Name = "grpOrder";
-            grpOrder.Size = new Size(535, 401);
+            grpOrder.Size = new Size(691, 401);
             grpOrder.TabIndex = 13;
             grpOrder.TabStop = false;
             grpOrder.Text = "주문내역";
@@ -247,7 +247,7 @@
             lstOrder.FormattingEnabled = true;
             lstOrder.Location = new Point(26, 81);
             lstOrder.Name = "lstOrder";
-            lstOrder.Size = new Size(486, 229);
+            lstOrder.Size = new Size(538, 229);
             lstOrder.TabIndex = 0;
             // 
             // btnOrder
